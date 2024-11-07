@@ -27,6 +27,13 @@ app.get('/', (req, res) => {
 await mongoose.connect(process.env.ATLAS_URI);
 console.log('MongoDB connected')
 
+
+//global error handling middleware
+app.use((err, req, res, next) => {
+    console.log(err);
+    res.status(500).send("Something went wrong...");
+})
+
 //Start server
 app.listen(PORT, () => {
     console.log(`Server running on port: ${PORT}`);
