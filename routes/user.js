@@ -1,5 +1,6 @@
 import express from 'express';
 import User from '../models/User.js';
+import Receipe from '../models/Receipe.js';
 
 const router = express.Router();
 
@@ -63,6 +64,31 @@ router.patch('/:id', async (req, res) => {
     } catch (err) {
         console.log(err);
         res.status(500).json({ message: 'Error updating user', error: err.message });
+    }
+});
+
+
+// DELETE route to remove a user by ID
+router.delete('/:id', async (req, res) => {
+    try {
+        const userId = req.params.id;
+        //// Check if there are any receipes associated with the user
+        //const userRecipes = await Receipe.find({ createdBy: userId });
+        //if (userRecipes.length > 0) {
+        //    return res.status(400).json({
+        //        message: 'Cannot delete user with associated receipes',
+        //        details: 'Please delete or reassign associated receipes first.'
+        //    });
+        //}
+        // Proceed with user deletion if no receipes found
+        const deletedUser = await User.findByIdAndDelete(userId);
+        if (!deletedUser) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+        res.status(200).json({ message: 'User deleted successfully', deletedUser });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: 'Error deleting user', error: err.message });
     }
 });
 
