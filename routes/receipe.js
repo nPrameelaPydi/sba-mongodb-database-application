@@ -40,4 +40,26 @@ router.get('/', async (req, res) => {
 });
 
 
+// PATCH route to update a receipe
+router.patch('/:id', async (req, res) => {
+    try {
+        const receipeId = req.params.id;
+        const updateData = req.body;
+        // Find the receipe and update it
+        const updatedReceipe = await Receipe.findByIdAndUpdate(receipeId, updateData, {
+            new: true,         // Return the updated receipe
+            runValidators: true // Run validation for the updated fields
+        });
+        if (!updatedReceipe) {
+            return res.status(404).json({ message: 'Receipe not found' });
+        }
+        res.json(updatedReceipe);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: 'Error updating receipe', error: err.message });
+    }
+});
+
+
+
 export default router;
