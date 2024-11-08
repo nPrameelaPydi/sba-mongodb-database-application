@@ -3,7 +3,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 
 //import routes
-import recipeRoutes from './routes/receipe.js';
+import receipeRoutes from './routes/receipe.js';
 import userRoutes from './routes/user.js';
 import commentRoutes from './routes/comment.js';
 
@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 //Routes
-app.use('/receipes', recipeRoutes);
+app.use('/receipes', receipeRoutes);
 app.use('/users', userRoutes);
 app.use('/comments', commentRoutes);
 

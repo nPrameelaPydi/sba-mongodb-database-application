@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
         const newUser = new User({
             name,
             email,
-            password, // Note: In a real app, you should hash passwords before saving
+            password,
         });
 
         // Save the user to the database

@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose';
 
-const recipeSchema = new Schema({
+const receipeSchema = new Schema({
     title: {
         type: String,
         required: true,
@@ -14,9 +14,9 @@ const recipeSchema = new Schema({
         required: true,
     },
     createdBy: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'User',
-        required: true,
+        //required: true,
     },
     createdAt: {
         type: Date,
@@ -24,4 +24,4 @@ const recipeSchema = new Schema({
     },
 });
 
-export default model('Recipe', recipeSchema);
+export default model('receipe', receipeSchema);
