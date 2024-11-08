@@ -28,4 +28,16 @@ router.post('/', async (req, res) => {
 });
 
 
+// GET route to fetch all receipes
+router.get('/', async (req, res) => {
+    try {
+        const receipes = await Receipe.find().populate('createdBy', 'username');
+        res.json(receipes);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: err.message });
+    }
+});
+
+
 export default router;

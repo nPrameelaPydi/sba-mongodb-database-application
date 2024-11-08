@@ -25,8 +25,7 @@ app.get('/', (req, res) => {
 
 //MongoDB connection
 await mongoose.connect(process.env.ATLAS_URI);
-console.log('MongoDB connected')
-
+console.log('MongoDB connected');
 
 //global error handling middleware
 app.use((err, req, res, next) => {
