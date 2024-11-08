@@ -36,4 +36,25 @@ router.get('/:receipeId', async (req, res) => {
     }
 });
 
+// PATCH route to update a comment
+router.patch('/:id', async (req, res) => {
+    try {
+        const commentId = req.params.id;
+        const updateData = req.body;
+        // Find the comment and update it
+        const updatedComment = await Comment.findByIdAndUpdate(commentId, updateData, {
+            new: true,         // Return the updated comment
+            runValidators: true // Run validation for the updated fields
+        });
+        if (!updatedComment) {
+            return res.status(404).json({ message: 'Comment not found' });
+        }
+        res.json(updatedComment);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: 'Error updating comment', error: err.message });
+    }
+});
+
+
 export default router;
