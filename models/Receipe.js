@@ -16,12 +16,12 @@ const receipeSchema = new Schema({
     createdBy: {
         type: Schema.Types.ObjectId,
         ref: 'User',
-        //required: true,
+        required: true,
     },
     createdAt: {
         type: Date,
-        default: Date.now,
-    },
+        default: Date.now
+    }
 });
 
 export default model('receipe', receipeSchema);
