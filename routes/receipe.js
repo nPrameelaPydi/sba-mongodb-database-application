@@ -1,5 +1,6 @@
 import express from 'express';
 import Receipe from '../models/Receipe.js';
+import User from '../models/User.js';
 
 const router = express.Router();
 
@@ -59,6 +60,24 @@ router.patch('/:id', async (req, res) => {
         res.status(500).json({ message: 'Error updating receipe', error: err.message });
     }
 });
+
+
+// DELETE route to remove a receipe by ID
+router.delete('/:id', async (req, res) => {
+    try {
+        const receipeId = req.params.id;
+        // find and delete the receipe by ID
+        const deletedReceipe = await Receipe.findByIdAndDelete(receipeId);
+        if (!deletedReceipe) {
+            return res.status(404).json({ message: 'Receipe not found' });
+        }
+        res.status(200).json({ message: 'Receipe deleted successfully', deletedReceipe });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: 'Error deleting receipe', error: err.message });
+    }
+});
+
 
 
 
