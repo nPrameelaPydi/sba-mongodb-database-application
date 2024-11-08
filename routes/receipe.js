@@ -1,6 +1,7 @@
 import express from 'express';
 import Receipe from '../models/Receipe.js';
 import User from '../models/User.js';
+import Comment from '../models/Comment.js';
 
 const router = express.Router();
 
