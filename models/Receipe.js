@@ -4,6 +4,7 @@ const receipeSchema = new Schema({
     title: {
         type: String,
         required: true,
+        index: true, // Index title for quick searching by title
     },
     ingredients: {
         type: [String], // Array of strings
@@ -17,10 +18,12 @@ const receipeSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true,
+        index: true, // Index for filtering recipes by author
     },
     createdAt: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        index: true, // Index for sorting recipes by creation date        
     }
 });
 
