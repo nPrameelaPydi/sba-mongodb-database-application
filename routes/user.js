@@ -42,4 +42,29 @@ router.get('/', async (req, res) => {
     }
 });
 
+// PATCH route to update user
+router.patch('/:id', async (req, res) => {
+    try {
+        const userId = req.params.id;
+        const updateData = req.body;
+
+        if (!updateData) {
+            return res.status(400).json({ message: 'No data provided for update' });
+        }
+        // Find the user by ID and update the fields provided in the request body
+        const updatedUser = await User.findByIdAndUpdate(userId, updateData, {
+            new: true, // Return the updated user
+            runValidators: true, // Validate the updated fields            
+        });
+        if (!updatedUser) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+        res.json(updatedUser); // Return the updated user
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: 'Error updating user', error: err.message });
+    }
+});
+
+
 export default router;
