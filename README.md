@@ -95,7 +95,7 @@ Update a comment (PATCH /comments/:id)
 Delete a comment (DELETE /comments/:id)
 ```
 ### Validation error screenshot
-![Alt text](./path/to/your-image.png)
+![Alt text](./assets/images/gitErrmsg.png)
 
 ## Contributing
 We welcome contributions to this project! Here's how you can contribute:
