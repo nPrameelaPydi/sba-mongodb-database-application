@@ -10,10 +10,11 @@ const userSchema = new Schema({
         type: String,
         required: true,
         unique: true, // Ensures no duplicate emails
+        validate: [validator.isEmail, 'Please enter a valid email']
     },
     password: {
         type: String,
-        //required: true,
+        required: true,
         minlength: 5,
     },
     createdAt: {
