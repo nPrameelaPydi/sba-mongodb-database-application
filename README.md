@@ -101,6 +101,5 @@ We welcome contributions to this project! Here's how you can contribute:
 - Submit a pull request to the main repository, explaining your changes and addressing any potential issues.
 
 ## Acknowledgements
-I would like to express my sincere gratitude to the following individuals and resources for their invaluable contributions to this project:
 * **Mongoose Documentation:** The comprehensive documentation provided by the Mongoose team has been instrumental in understanding and utilizing this powerful ODM.
 * **Node.js and Express.js Communities:** The vibrant communities surrounding these technologies have offered valuable insights and solutions.
