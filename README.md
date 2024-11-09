@@ -9,8 +9,8 @@
   - [User Routes](#user-routes)
   - [Receipe Routes](#receipe-routes)
   - [Comment Routes](#comment-routes)
-- [Sample Data](#sample-data)
-- [Future Improvements](#future-improvements)
+- [Contributing](#contributing)
+- [Acknowledgements](#acknowledgements)
 
 ## Features
 - **User Management**: Users can sign up and manage their accounts.
