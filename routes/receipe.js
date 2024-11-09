@@ -10,9 +10,9 @@ router.post('/', async (req, res) => {
     try {
         const { title, ingredients, instructions, createdBy } = req.body;
         // Basic validation
-        if (!title || !ingredients || !instructions || !createdBy) {
-            return res.status(400).json({ message: 'All fields are required' });
-        }
+        //if (!title || !ingredients || !instructions || !createdBy) {
+        //    return res.status(400).json({ message: 'All fields are required' });
+        //}
         // Create a new receipe
         const newreceipe = new Receipe({
             title,
