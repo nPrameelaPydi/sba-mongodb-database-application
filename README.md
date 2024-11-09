@@ -104,5 +104,3 @@ We welcome contributions to this project! Here's how you can contribute:
 I would like to express my sincere gratitude to the following individuals and resources for their invaluable contributions to this project:
 * **Mongoose Documentation:** The comprehensive documentation provided by the Mongoose team has been instrumental in understanding and utilizing this powerful ODM.
 * **Node.js and Express.js Communities:** The vibrant communities surrounding these technologies have offered valuable insights and solutions.
-* **My Mentors and Peers:** Their guidance and support have been essential in shaping this project.
-I would also like to thank you, the user, for your interest and feedback. Your input has helped to improve this project.
