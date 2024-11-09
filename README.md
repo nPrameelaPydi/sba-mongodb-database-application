@@ -68,7 +68,9 @@ recipe-hub/
   │   └── comment.js             # Comment API routes
   ├── README.md                  # Project documentation
   ├── package.json               # Project dependencies and scripts
-  └── .gitignore                 # Git ignore rules (e.g., node_modules, .env)
+  ├── .gitignore                 # Git ignore rules (e.g., node_modules, .env)
+  └── seed.js                    # Sample data for all data collections
+  
 ```
 ## API Routes
 ### User Routes
