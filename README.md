@@ -94,6 +94,9 @@ Get comments for a specific recipe (GET /comments/:recipeId)
 Update a comment (PATCH /comments/:id)
 Delete a comment (DELETE /comments/:id)
 ```
+### Validation error screenshot
+![Alt text](./path/to/your-image.png)
+
 ## Contributing
 We welcome contributions to this project! Here's how you can contribute:
 - Fork this repository on GitHub and create a new branch for your feature or bug fix.
